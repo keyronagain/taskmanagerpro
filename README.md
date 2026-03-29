@@ -18,7 +18,11 @@ Puedes agregar tareas, moverlas entre columnas y ver tu progreso en tiempo real.
 - **Backend:** Python + FastAPI
 - **Base de datos:** SQLite
 
-## Cómo correrlo
+## Demo
+
+🔗 [taskmanagerpro.onrender.com](https://taskmanagerpro.onrender.com)
+
+## Cómo correrlo localmente
 
 1. Instalar dependencias:
 ```bash
@@ -30,7 +34,10 @@ pip install fastapi uvicorn
 uvicorn main:app --reload
 ```
 
-3. Abrir `index.html` en el navegador
+3. Abrir en el navegador:
+```
+http://127.0.0.1:8000
+```
 
 ## Autor
 **Keyron Brenes** — [@keyronagain](https://github.com/keyronagain)
