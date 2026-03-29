@@ -3,6 +3,8 @@ from datetime import datetime
 from typing import List, Literal
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 DB_NAME = "tareas.db"
@@ -124,9 +126,7 @@ def actualizar_estado(tarea_id: int, datos: ActualizarEstado):
     )
     siguiente_orden = cursor.fetchone()["siguiente"]
     cursor.execute(
-        """
-        UPDATE tareas SET estado = ?, orden = ? WHERE id = ?
-        """,
+        "UPDATE tareas SET estado = ?, orden = ? WHERE id = ?",
         (datos.estado, siguiente_orden, tarea_id),
     )
     conn.commit()
@@ -149,9 +149,7 @@ def toggle_completada(tarea_id: int, datos: ToggleCompletada):
     )
     siguiente_orden = cursor.fetchone()["siguiente"]
     cursor.execute(
-        """
-        UPDATE tareas SET estado = ?, orden = ? WHERE id = ?
-        """,
+        "UPDATE tareas SET estado = ?, orden = ? WHERE id = ?",
         (nuevo_estado, siguiente_orden, tarea_id),
     )
     conn.commit()
@@ -164,9 +162,7 @@ def reordenar_tareas(datos: ReordenarTareas):
     cursor = conn.cursor()
     for indice, tarea_id in enumerate(datos.ids):
         cursor.execute(
-            """
-            UPDATE tareas SET estado = ?, orden = ? WHERE id = ?
-            """,
+            "UPDATE tareas SET estado = ?, orden = ? WHERE id = ?",
             (datos.estado, indice, tarea_id),
         )
     conn.commit()
@@ -184,3 +180,10 @@ def eliminar_tarea(tarea_id: int):
     if borradas == 0:
         raise HTTPException(status_code=404, detail="Tarea no encontrada")
     return {"ok": True}
+
+# Servir frontend — va al final siempre
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/")
+def serve_frontend():
+    return FileResponse("static/index.html")

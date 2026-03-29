@@ -1,4 +1,3 @@
-# Base de datos (datos personales)
 tareas.db
 
 # Python
@@ -13,4 +12,5 @@ env/
 
 # Sistema operativo
 .DS_Store
-Thumbs.db.vscode/
+Thumbs.db
+.vscode/
