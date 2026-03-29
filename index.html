@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager Pro</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+
+      <header class="topbar">
+        <div>
+          <h1>Task Manager Pro</h1>
+          <p class="subtitle">Organiza tus tareas con tablero, progreso y categorías.</p>
+        </div>
+      </header>
+
+      <section class="toolbar card">
+        <div class="input-row">
+          <input id="tareaInput" type="text" placeholder="Nueva tarea..." maxlength="200" />
+          <select id="categoria">
+            <option value="Trabajo">Trabajo</option>
+            <option value="Estudio">Estudio</option>
+            <option value="Personal">Personal</option>
+          </select>
+          <button id="agregarBtn" class="primary-btn">Agregar</button>
+        </div>
+        <div class="filters-row">
+          <input id="buscarInput" type="text" placeholder="Buscar tarea..." />
+          <select id="filtroCategoria">
+            <option value="Todas">Todas las categorías</option>
+            <option value="Trabajo">Trabajo</option>
+            <option value="Estudio">Estudio</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+          </div>
+          <div class="progress-meta">
+            <span id="contadorTexto">Pendientes: 0 | En progreso: 0 | Completadas: 0</span>
+            <span id="porcentajeTexto">0%</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="board">
+        <div class="column card" data-estado="Pendiente">
+          <div class="column-header pendiente-header">
+            <h2>Pendiente</h2>
+            <span id="countPendiente" class="count-pill">0</span>
+          </div>
+          <div class="lista" id="pendiente"></div>
+        </div>
+
+        <div class="column card" data-estado="En progreso">
+          <div class="column-header progreso-header">
+            <h2>En progreso</h2>
+            <span id="countProgreso" class="count-pill">0</span>
+          </div>
+          <div class="lista" id="progreso"></div>
+        </div>
+
+        <div class="column card" data-estado="Completado">
+          <div class="column-header completado-header">
+            <h2>Completado</h2>
+            <span id="countCompletado" class="count-pill">0</span>
+          </div>
+          <div class="lista" id="completado"></div>
+        </div>
+      </section>
+
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
