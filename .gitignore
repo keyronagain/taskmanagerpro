@@ -1,5 +1,16 @@
-venv/
+# Base de datos (datos personales)
+tareas.db
+
+# Python
 __pycache__/
 *.pyc
-.vscode/
-tareas.db
+*.pyo
+.env
+
+# Entorno virtual
+venv/
+env/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
