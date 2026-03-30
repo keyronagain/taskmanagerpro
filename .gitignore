@@ -1,16 +1,10 @@
 tareas.db
-
-# Python
 __pycache__/
 *.pyc
 *.pyo
 .env
-
-# Entorno virtual
 venv/
 env/
-
-# Sistema operativo
 .DS_Store
 Thumbs.db
 .vscode/
