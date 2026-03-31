@@ -6,7 +6,7 @@ Helps users organize their workflow by categorizing tasks and tracking progress 
 
 Built as a full-stack portfolio project combining a REST API backend with a vanilla JavaScript frontend.
 
-Live demo: **taskmanagerpro-omvf.onrender.com**
+**Live demo:** [keyronagain.github.io/simulador-vehiculos-cr](https://keyronagain.github.io/simulador-vehiculos-cr)
 
 ## Features
 
@@ -51,5 +51,5 @@ taskmanagerpro/
 
 ## Author
 
-Keyron Brenes — Computer Engineering student, Costa Rica
- GitHub: **@keyronagain**
+**Keyron Brenes** — Computer Engineering student, Costa Rica  
+GitHub: [@keyronagain](https://github.com/keyronagain)
