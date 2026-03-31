@@ -1,43 +1,55 @@
-# Task Manager Pro 📋
+# 📋 Task Manager Pro
 
-App para organizar tus tareas del día a día con un tablero Kanban visual.
-Puedes agregar tareas, moverlas entre columnas y ver tu progreso en tiempo real.
+An interactive Kanban board for managing daily tasks with real-time updates and drag & drop functionality.
 
-## ¿Qué puedes hacer?
+Helps users organize their workflow by categorizing tasks and tracking progress visually across three stages: Pending, In Progress, and Completed.
 
-- ✅ Agregar tareas con categoría (Trabajo, Estudio, Personal)
-- 🖱️ Arrastrar tareas entre columnas (Pendiente → En progreso → Completado)
-- ☑️ Marcar tareas como completadas
-- 🔍 Buscar y filtrar por categoría
-- 📊 Ver tu progreso con una barra de porcentaje
-- 🗑️ Eliminar tareas
+Built as a full-stack portfolio project combining a REST API backend with a vanilla JavaScript frontend.
 
-## Tecnologías
+Live demo: **taskmanagerpro-omvf.onrender.com**
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Python + FastAPI
-- **Base de datos:** SQLite
+## Features
 
-## Demo
+* Real-time updates — add, move, and delete tasks instantly
+* Drag & drop — move tasks between columns with mouse
+* Progress tracking — live progress bar showing completion percentage
+* Category system — classify tasks as Work, Study, or Personal
+* Search & filter — find tasks by text or category in real time
+* Persistent storage — all tasks and order saved to database
+* Responsive design — works on desktop and mobile
 
-🔗 [taskmanagerpro-omvf.onrender.com](https://taskmanagerpro-omvf.onrender.com)
+## How it works
 
-## Cómo correrlo localmente
-
-1. Instalar dependencias:
-```bash
-pip install fastapi uvicorn
+Each task follows a simple state machine:
+```
+Pending → In Progress → Completed
 ```
 
-2. Encender el servidor:
-```bash
-uvicorn main:app --reload
+The frontend communicates with the backend through a REST API. Every action (create, update, reorder, delete) sends a request to FastAPI, which processes it and updates the SQLite database. The UI re-renders automatically after each operation.
+
+## Tech stack
+
+* **Frontend:** HTML5, CSS3, Vanilla JavaScript
+* **Backend:** Python, FastAPI
+* **Database:** SQLite
+* **Server:** Uvicorn
+* **Deploy:** Render
+
+## Project structure
+```
+taskmanagerpro/
+├── main.py          # REST API and database logic
+├── requirements.txt # Python dependencies
+├── static/
+│   ├── index.html   # Main HTML structure
+│   ├── css/
+│   │   └── styles.css  # All styles and responsive layout
+│   └── js/
+│       └── app.js   # Calculations, requests, and interactivity
+└── README.md        # This file
 ```
 
-3. Abrir en el navegador:
-```
-http://127.0.0.1:8000
-```
+## Author
 
-## Autor
-**Keyron Brenes** — [@keyronagain](https://github.com/keyronagain)
+Keyron Brenes — Computer Engineering student, Costa Rica
+GitHub: **@keyronagain**
